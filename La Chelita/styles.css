@@ -1,0 +1,526 @@
+/* starter code */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Lexend', sans-serif;
+    background-color: #FFAD4A;
+    padding: 0px;
+}
+
+/* Navigation Bar */ 
+.navbar {
+    position: relative; 
+    background: linear-gradient(to right, #D14822 , #FFAD4A);
+    height: 80px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.15); /* by chat */
+    overflow: hidden;
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    left: -60px;       
+    top: 0;
+    width: 300px;      
+    height: 100%;
+    background: linear-gradient(to right, #D14822 , #FFAD4A);   
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    opacity: 0.7;
+
+}
+
+/* Logo Styling */
+.logo img {
+    position: relative;
+    z-index: 1; 
+    margin-right: 150px; 
+    height: 45px;
+    width: auto;
+}
+
+/* Navigation Menu List */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 32px;
+    position: relative;
+    z-index: 1; 
+}
+
+.navbar li {
+    display: inline;
+}
+
+/* Navigation Links */
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: opacity .2s ease, transform .2s ease;
+    
+}
+
+/* Hover Effect for Navigation Links */
+.navbar a:hover {
+    color: white;
+}
+
+
+/* Hero Section with Image Background */
+.hero-section {
+    background-image: url('home_open_image.png');
+    background-size: cover;
+    background-position: center;
+    height: 750px;
+    display: flex;
+    flex-direction:column; 
+    justify-content: center;
+    gap:40px; 
+
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    /* Font: From chat */ 
+    font-family: 'Lily Script One', cursive;
+    font-size: 20pt;
+}
+
+/* botton */
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:20px;
+    background:#FF8458;
+    color:white;
+    font-family:'Lexend', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    text-decoration:none;  
+    background: rgba(255, 132, 88, 0.8); /* lower only background opacity */
+    box-shadow:0 6px 20px rgba(0,0,0,.2);
+    transition:transform .15s, box-shadow .15s;
+
+
+}
+
+/* effect when you on it */ 
+.btn:hover {
+    background: rgba(255, 171, 69, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+}
+
+
+
+/* home page story section */ 
+.story-section{
+    position: relative;
+    background-image: url('home_about_bg.png'); 
+    background-size: cover;
+    background-position: center;
+    padding: 80px 24px;  
+    height: 400px;
+    margin-top: 0; 
+}
+
+.story-card{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 36px 40px;
+    border-radius: 20px;
+    background: rgba(255,132,88,0.35);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.story-card p{
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    line-height: 1.75;
+    color: #1d120b;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+
+/* Home page dish cards */
+
+/* background */
+.menu-section {
+    padding: 60px 0;
+    background: linear-gradient(90deg, #d75a29, #f6a04c);
+}
+
+/* 3 crads in a line*/
+.menu-inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;             
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;   /* anto change line with small scean */
+}
+
+/* Single card */
+.dish-card {
+    position: relative;
+    width: 340px;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.dish-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dish-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* dish name */
+.dish-title {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Lily Script One', cursive;
+    font-size: 26px;
+    color: white;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+}
+
+/* card botton */
+.dish-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    display: inline-flex;
+    padding: 14px 70px;
+    white-space: nowrap; 
+    border-radius: 20px;
+    background: rgba(255, 132, 88, 0.85);
+
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    transition: background .25s ease, transform .15s ease;
+}
+
+.dish-btn:hover {
+    background: rgba(255, 171, 69, 0.85);
+    transform: translate(-50%, -2px);
+}
+
+
+
+/* Comment cards */
+.review-section{
+    background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), 
+    url('home_open_image.png');   
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+}
+
+/* Card in line*/
+.review-inner {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* single card */
+.review-card {
+    background: rgba(255, 132, 88, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 20px;
+    padding: 32px 36px;
+    width: 330px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    color: white;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+}
+
+/* Comment's type */
+.review-text {
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* separate line */
+.review-card hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.6);
+    margin-bottom: 12px;
+}
+
+/* bottom part */
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars {
+    font-size: 20px;
+}
+
+.name {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/* Location */
+.visit-section {
+    background: linear-gradient(to bottom, #d75a29, #f6a04c);
+    padding: 80px 40px 60px;
+    text-align: left;
+    color: #1d120b;
+    font-family: 'Lexend', sans-serif;
+}
+
+.visit-inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+}
+
+/* text on the left */
+.visit-text {
+    flex: 1 1 100px;
+}
+
+.visit-text h2 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.visit-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 6px;
+}
+
+.visit-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* map picture */
+.visit-map {
+    flex: 1 1 200px;
+}
+
+.visit-map img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* quote on bottom */
+.visit-quote {
+    text-align: center;
+    font-family: 'Lily Script One', cursive;
+    font-size: 45px;
+    color: #fff;
+    margin-top: 50px;
+}   
+
+
+/* footer */
+.site-footer{
+    background: linear-gradient(to right, #d75a29, #f6a04c);
+    padding: 38px 0 0;
+    color: #1d120b;
+    font-family: 'Lexend', sans-serif;
+}
+
+.footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 28px 28px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr; 
+    gap: 48px;
+}
+
+.footer-col h5{
+    font-size: 16px;
+    font-weight: 800;
+    margin: 8px 0 6px;
+}
+
+.footer-col p{
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 12px;
+}
+
+.footer-col a{
+    color: #1d120b;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+}
+.footer-col a:hover{
+    color: #ffffff;
+    border-color: #7b4223;
+}
+
+/* left */
+.footer-logo{
+    height: 56px; width: auto; display: block;
+    margin-bottom: 14px;
+}
+.brand-line{
+    font-size: 28px;
+    font-weight: 800;
+    margin: 4px 0 10px;
+}
+.tagline{
+    font-family: 'Lily Script One', cursive;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+/* bottom */
+.footer-bar{
+    border-top: 1px solid rgba(0,0,0,.12);
+    background: linear-gradient(to right, #D14822, #FFAD4A);
+    padding: 12px 28px;
+    margin-top: 8px;
+}
+
+.footer-bar p{
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(0,0,0,.8);
+    font-size: 14px;
+}
+
+
+/* Menu Title */
+.menu-header {
+    background: url('title_texture_bg.png') center/cover no-repeat;
+    text-align: center;
+    padding: 48px 10px 32px;
+}
+
+.menu-header__title {
+    font-family: 'Lily Script One', cursive;
+    font-size: 64px;
+    color: #000;
+    margin: 0;
+}
+
+
+/* Menu Cards */
+.menu-gallery {
+    background: linear-gradient(180deg, #f3a672 0%, #ee8f5c 50%, #e47a53 100%);
+    padding: 70px 0;
+}
+
+.menu-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.menu-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 32px rgba(0,0,0,.25);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 44px rgba(0,0,0,.32);
+}
+.menu-card img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-card__btn {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 18px;
+    background: rgba(255,132,88,.85);
+    color: #fff;
+    font: 700 18px 'Lexend', sans-serif;
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(0,0,0,.22);
+    backdrop-filter: blur(3px);
+    transition: background .25s ease, transform .15s ease;
+}
+.menu-card__btn:hover {
+    background: rgba(255,171,69,.85);
+    transform: translate(-50%, -25px); 
+}
