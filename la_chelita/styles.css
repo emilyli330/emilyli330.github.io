@@ -1,0 +1,1312 @@
+/* starter code */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Lexend', sans-serif;
+    background-color: #FFAD4A;
+    padding: 0px;
+}
+
+/* ----------------------Navigation Bar----------------------- */ 
+.navbar {
+    position: relative; 
+    background: linear-gradient(to right, #D14822 , #FFAD4A);
+    height: 80px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.15); /* by chat */
+    overflow: hidden;
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    left: -60px;       
+    top: 0;
+    width: 300px;      
+    height: 100%;
+    background: linear-gradient(to right, #D14822 , #FFAD4A);   
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    opacity: 0.7;
+
+}
+
+/* Logo Styling */
+.logo img {
+    position: relative;
+    z-index: 1; 
+    margin-right: 150px; 
+    height: 45px;
+    width: auto;
+}
+
+/* Navigation Menu List */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 32px;
+    position: relative;
+    z-index: 1; 
+}
+
+.navbar li {
+    display: inline;
+}
+
+/* Navigation Links */
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: opacity .2s ease, transform .2s ease;
+    
+}
+
+/* Hover Effect for Navigation Links */
+.navbar a:hover {
+    color: white;
+}
+
+
+
+/*---------------------Home Page -------------------*/
+
+/* Hero Section with Image Background */
+.hero-section {
+    position: relative;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    color: white;
+    text-align: center;
+    border-radius: 0;
+    font-family: 'Lily Script One', cursive;
+    font-size: 35pt;
+    overflow: hidden; /* Important: hide image overflow */
+}
+
+/* Background Layer */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    animation: fadeGallery 12s infinite; /* total cycle duration */
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: inherit;
+}
+
+/* Fade Animation — 4 images example */
+@keyframes fadeGallery {
+    0% {
+        background-image: url('home_open_image.png');
+        opacity: 1;
+    }
+    
+    50% {
+        background-image: url('home_open_image2.png');
+        opacity: 1;
+    }
+   
+    100% {
+        background-image: url('home_open_image.png');
+        opacity: 1;
+    }
+}
+
+/* botton */
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:20px;
+    background:#FF8458;
+    color:white;
+    font-family:'Lexend', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    text-decoration:none;  
+    background: rgba(255, 132, 88, 0.8); /* lower only background opacity */
+    box-shadow:0 6px 20px rgba(0,0,0,.2);
+    transition:transform .15s, box-shadow .15s;
+
+
+}
+
+/* effect when you on it */ 
+.btn:hover {
+    background: rgba(255, 171, 69, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+}
+
+
+
+/* home page story section */ 
+.story-section{
+    position: relative;
+    background-image: url('home_about_bg.png'); 
+    background-size: cover;
+    background-position: center;
+    padding: 80px 24px;  
+    height: 400px;
+    margin-top: 0; 
+}
+
+.story-card{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 36px 40px;
+    border-radius: 20px;
+    background: rgba(255,132,88,0.35);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.story-card p{
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    line-height: 1.75;
+    color: #1d120b;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+
+/* Home page dish cards */
+
+/* background */
+.menu-section {
+    padding: 60px 0;
+    background: linear-gradient(90deg, #d75a29, #f6a04c);
+}
+
+/* 3 crads in a line*/
+.menu-inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;             
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;   /* anto change line with small scean */
+}
+
+/* Single card */
+.dish-card {
+    position: relative;
+    width: 340px;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.dish-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dish-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* dish name */
+.dish-title {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Lily Script One', cursive;
+    font-size: 26px;
+    color: white;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+}
+
+/* card botton */
+.dish-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    display: inline-flex;
+    padding: 14px 70px;
+    white-space: nowrap; 
+    border-radius: 20px;
+    background: rgba(255, 132, 88, 0.85);
+
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    transition: background .25s ease, transform .15s ease;
+}
+
+.dish-btn:hover {
+    background: rgba(255, 171, 69, 0.85);
+    transform: translate(-50%, -2px);
+}
+
+
+
+/* Comment cards */
+.review-section{
+    background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), 
+    url('home_open_image.png');   
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+}
+
+/* Card in line*/
+.review-inner {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* single card */
+.review-card {
+    background: rgba(255, 132, 88, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 20px;
+    padding: 32px 36px;
+    width: 330px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    color: white;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+}
+
+/* Comment's type */
+.review-text {
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* separate line */
+.review-card hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.6);
+    margin-bottom: 12px;
+}
+
+/* bottom part */
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars {
+    font-size: 20px;
+}
+
+.name {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/* Location */
+.visit-section {
+    background: linear-gradient(to bottom, #d75a29, #f6a04c);
+    padding: 80px 40px 60px;
+    text-align: left;
+    color: #1d120b;
+    font-family: 'Lexend', sans-serif;
+}
+
+.visit-inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+}
+
+/* text on the left */
+.visit-text {
+    flex: 1 1 100px;
+}
+
+.visit-text h2 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.visit-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 6px;
+}
+
+.visit-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* map picture */
+.visit-map {
+    flex: 1 1 200px;
+}
+
+.visit-map img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* quote on bottom */
+.visit-quote {
+    text-align: center;
+    font-family: 'Lily Script One', cursive;
+    font-size: 45px;
+    color: #fff;
+    margin-top: 50px;
+}   
+
+
+/* --------------------------Footer--------------------------- */
+.site-footer{
+    background: linear-gradient(to right, #d75a29, #f6a04c);
+    padding: 38px 0 0;
+    color: #1d120b;
+    font-family: 'Lexend', sans-serif;
+}
+
+.footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 28px 28px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr; 
+    gap: 48px;
+}
+
+.footer-col h5{
+    font-size: 16px;
+    font-weight: 800;
+    margin: 8px 0 6px;
+}
+
+.footer-col p{
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 12px;
+}
+
+.footer-col a{
+    color: #1d120b;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+}
+.footer-col a:hover{
+    color: #ffffff;
+    border-color: #7b4223;
+}
+
+/* left */
+.footer-logo{
+    height: 56px; width: auto; display: block;
+    margin-bottom: 14px;
+}
+.brand-line{
+    font-size: 28px;
+    font-weight: 800;
+    margin: 4px 0 10px;
+}
+.tagline{
+    font-family: 'Lily Script One', cursive;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+/* bottom */
+.footer-bar{
+    border-top: 1px solid rgba(0,0,0,.12);
+    background: linear-gradient(to right, #D14822, #FFAD4A);
+    padding: 12px 28px;
+    margin-top: 8px;
+}
+
+.footer-bar p{
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(0,0,0,.8);
+    font-size: 14px;
+}
+
+
+/* ------------------------Main Menu Page------------------*/
+
+/* Menu Title */
+.menu-header {
+    background: url('title_texture_bg.png') center/cover no-repeat;
+    text-align: center;
+    padding: 48px 10px 32px;
+}
+
+.menu-header__title {
+    font-family: 'Lily Script One', cursive;
+    font-size: 64px;
+    color: #000;
+    margin: 0;
+}
+
+
+/* 2 Menu Cards */
+.menu-gallery {
+    background: linear-gradient(180deg, #f3a672 0%, #ee8f5c 50%, #e47a53 100%);
+    padding: 70px 0;
+}
+
+.menu-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.menu-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 32px rgba(0,0,0,.25);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 44px rgba(0,0,0,.32);
+}
+.menu-card img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-card__btn {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 18px;
+    background: rgba(255,132,88,.85);
+    color: #fff;
+    font: 700 18px 'Lexend', sans-serif;
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(0,0,0,.22);
+    backdrop-filter: blur(3px);
+    transition: background .25s ease, transform .15s ease;
+}
+.menu-card__btn:hover {
+    background: rgba(255,171,69,.85);
+    transform: translate(-50%, -25px); 
+}
+
+
+/*-----------------------Food Menu Page--------------------*/
+
+/* Full Food Menu Sheet */
+.menu-sheet {
+  background: linear-gradient(180deg, #f3a672 0%, #ee8f5c 55%, #e47a53 100%);
+  padding: 70px 0 24px;
+}
+.menu-sheet__card {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+  z-index: 2; 
+}
+.menu-sheet__card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* dirnk botton section */
+.menu-sheet__drink {
+  position: relative;
+  max-width: 820px;
+  margin: -250px auto 0px; /* dirnk card position */
+  border-radius: 0 0 18px 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.menu-sheet__drink img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* bottom botton*/
+.menu-sheet__drink > .menu-sheet__btn {
+  position: absolute !important;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 18px;
+  background: rgba(255, 132, 88, .85);
+  color: #fff;
+  font: 700 18px 'Lexend', sans-serif;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: background .25s ease, transform .15s ease;
+}
+
+.menu-sheet__drink > .menu-sheet__btn:hover {
+  background: rgba(255, 171, 69, .85);
+  transform: translate(-50%, -2px);
+}
+
+
+
+/* ----------------------Drinks section page---------------------- */
+.drink-menu{
+    padding: 30px 0px 80px;
+    background-image: url('drink_menu_bg.png');
+    background-size: cover;
+    background-position: center;   
+    display: flex;
+    justify-content: center;
+}
+
+/* 2 lists */
+.drink-menu__inner{
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+}
+
+/* list */
+.drink-col{}
+
+/* Section Title and price */
+.drink-h{
+  font-family: 'Lily Script One', cursive;
+  font-size: 30px;
+  line-height: 1.1;
+  margin: 8px 0 14px;
+  color: #1d120b;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.drink-h .price{
+  font-family: 'Lexend', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .1px;
+  color: #1d120b;
+  opacity: .85;
+}
+
+/* list */
+.drink-list{
+  list-style: disc inside;
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #1d120b;
+  margin: 0 0 26px;
+  padding: 0;
+}
+.drink-list li{
+  margin: 6px 0;
+}
+
+/* Sub discribtion */
+.drink-list .sub{
+  font-size: 14.5px;
+  opacity: .85;
+  margin-left: 18px;
+  line-height: 1.55;
+}
+
+/* bold */
+.drink-list strong{
+  font-weight: 800;
+}
+
+
+/* dirnk botton section */
+.menu-sheet__food {
+  position: relative;
+  max-width: 720px;
+  margin: 3000px -32 0px; /* dirnk card position */
+  border-radius: 20px 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.menu-sheet__food img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* bottom botton*/
+.menu-sheet__food > .menu-sheet__btn {
+  position: absolute !important;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 18px;
+  background: rgba(255, 132, 88, .85);
+  color: #fff;
+  font: 700 18px 'Lexend', sans-serif;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: background .25s ease, transform .15s ease;
+}
+
+.menu-sheet__food > .menu-sheet__btn:hover {
+  background: rgba(255, 171, 69, .85);
+  transform: translate(-50%, -2px);
+}
+
+/* background card */
+.card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0,0,0,.25);
+}
+
+/* 专门给菜单文字内容用的卡片：控制内边距 */
+.card--menu {
+  padding: 20px 32px;
+}
+
+
+/* ------------------------Review Page----------------------- */
+
+/* Rivew Title */
+.review-header {
+    background: url('title_texture_bg.png') center/cover no-repeat;
+    text-align: center;
+    padding: 48px 10px 32px;
+}
+
+.review-header__title {
+    font-family: 'Lily Script One', cursive;
+    font-size: 64px;
+    color: #000;
+    margin: 0;
+}
+
+
+.review-form{
+  background-image: url('review_bg.png');
+  padding: 48px 24px;
+}
+
+/* 2 lists */
+.review-form__inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px 56px;
+}
+
+/* left Side */
+.review-info{
+  font-family: 'Lexend', sans-serif;
+  color: #1d120b;
+}
+.review-info h2{
+  font-family: 'Lexend', sans-serif;
+  font-weight: 800;
+  font-size: 42px;
+  margin: 0 0 18px;
+}
+.review-info .k{
+  font-weight: 800;
+  margin: 16px 0 4px;
+}
+.review-info a{
+  color: #1d120b;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29,18,11,.25);
+}
+.review-info a:hover{ border-color: rgba(29,18,11,.6); 
+
+}
+
+
+/* right side */
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Lexend' , sans-serif;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px; 
+}
+
+.form-group label {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Date */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1em;
+  outline: none;
+}
+
+/* Text box */
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* stars */
+.rating {
+  direction: rtl; /* left to right */
+  display: flex;      
+  justify-content: left;
+  gap: 10px;               /* Space between each  */
+  margin-top: -10px;    
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 2.5em;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #fff;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));
+  transform: scale(1.1);
+}
+
+/* Botton */
+.submit-btn {
+  padding: 15px 40px;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: max-content;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Catering / Events hero section */
+.catering-hero {
+  position: relative;
+  height: 700px;                      /* 高度你可以调  */
+  background-image: url('event_open_img.png');  /* 换成你自己的图片名 */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* 上面盖一层半透明橙色，让字更清楚 */
+.catering-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);   /* 想要更亮/更暗可以改透明度 */
+}
+
+/* 中间文字容器 */
+.catering-hero__content {
+  position: relative;
+  z-index: 1;                        /* 压在遮罩上面 */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 32px;                   /* 预防小屏幕贴边 */
+}
+
+/* 文本样式 */
+.catering-hero__content h2 {
+  font-family: 'Lily Script One', cursive;  
+  font-size: 75px;                           /* quot font size */
+  line-height: 1.3;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+
+/* --------------------  Events Form Section  -------------------- */
+
+/* Background */
+.event-form {
+  background: url('review_bg.png') center/cover no-repeat; 
+  padding: 60px 24px 80px;
+}
+
+/* 宽度 & 居中 */
+.event-form__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Title */
+.event-form__title {
+  font-family: 'Lexend', cursive;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+/* sapce between each line */
+.form-group {
+  margin-bottom: 24px;
+}
+
+/* (first / last name） */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* label： Lexend，bold */
+.form-group label {
+  display: block;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+/* input, text, date, number, textarea */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  font-family: 'Lexend', sans-serif;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* focus 时亮一点，带一点阴影 */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 3px rgba(255, 132, 88, 0.4);
+}
+
+/* textarea 高一点，可拉伸 */
+.form-group textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+/* 下拉箭头 */
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 20px;
+  padding-right: 46px;
+}
+
+/* submit btn */
+.submit-container {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* Submit btn */
+.event-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 60px;
+  
+  background: linear-gradient(135deg, #ff8458, #ffad4a);
+  color: #fff;
+  
+  font-family: 'Lexend', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  transition: background .25s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.event-form__submit:hover {
+  background: linear-gradient(135deg, #ff9b58, #ffc368);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+.event-form__submit:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+
+/* samller with the small screan */
+@media (max-width: 768px) {
+  .event-form__title {
+    font-size: 2.4rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .event-form__submit {
+    font-size: 1.4rem;
+    padding: 16px 60px;
+  }
+}
+
+
+
+/*  --------------------Thank U page---------------------- */
+
+/* thank you page hero section */
+.thanku-hero {
+    position: relative;
+    height: 700px;                     
+    background-image: url('thanku_img.png');  
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* 上面盖一层半透明橙色，让字更清楚 */
+.thanku-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);   /* 想要更亮/更暗可以改透明度 */
+}
+
+/* 中间文字容器 */
+.thanku-hero__content {
+    position: relative;
+    z-index: 1;                        /* 压在遮罩上面 */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 32px;                   /* 预防小屏幕贴边 */
+}
+
+/* text */
+.thanku-hero__content h2 {
+    font-family: 'Lily Script One', cursive;
+    font-size: 100px;
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+    display: block;        
+    width: 100%;           
+    text-align: center;  
+    margin-bottom: 40px;  
+}
+
+.thanku-hero__content h3 {
+    font-family: 'Lily Script One', cursive;
+    font-size: 40px;
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+    display: block;        
+    width: 100%;           
+    text-align: center;    
+}
+
+
+/* Thank you button */
+.thanku-btn {
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    text-decoration: none;
+    background: rgba(255, 132, 88, 0.8);
+    box-shadow: 0 6px 20px rgba(0,0,0,.2);
+    transition: transform .15s, box-shadow .15s, background .15s;
+    margin-top: 50px;
+}
+
+.thanku-btn:hover {
+    background: rgba(255, 171, 69, 0.8);
+
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+
+
+
+/* ---------------Our Story page -----------------*/
+
+/* Story Title */
+.story-header {
+    background: url('title_texture_bg.png') center/cover no-repeat;
+    text-align: center;
+    padding: 48px 10px 32px;
+}
+
+.story-header__title {
+    font-family: 'Lily Script One', cursive;
+    font-size: 64px;
+    color: #000;
+    margin: 0;
+}
+
+
+/* Story content */
+.story-page {
+    background-image: url('story_bg.png');  /* page bg */
+    background-size: cover;
+    background-position: center;
+    padding: 70px 24px 60px;
+}
+
+.story-page__inner {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+/* top quote */
+.story-page__quote {
+    font-family: 'Lily Script One', cursive;
+    font-size: 40px;
+    text-align: center;
+    color: #1d120b;
+    margin-bottom: 36px;
+}
+
+/* layout top */
+.story-row {
+    display: grid;
+    grid-template-columns: 1.05fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.story-row--reverse {
+    grid-template-columns: 1.2fr 1.05fr;
+}
+
+.story-row--reverse .story-photo {
+    order: 2;
+}
+.story-row--reverse .story-text {
+    order: 1;
+}
+
+/* pic set*/
+.story-photo img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+/* 3pic/2pic in a line */
+.story-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin: 4px 0 22px;
+}
+
+.story-photo-grid--bottom {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10px;
+    margin-bottom: 32px;
+}
+
+/* text set */
+.story-text {
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #1d120b;
+}
+
+.story-text p + p {
+    margin-top: 20px;
+}
+
+/* 宽版文字块（居中整段） */
+.story-text--wide {
+    max-width: 840px;
+    margin: 0 auto 26px;
+}
+
+/* 居中对齐的收尾文字 */
+.story-text--center {
+    text-align: left;
+}
+
+.story-page__thankyou {
+    font-family: 'Lily Script One', cursive;
+    font-size: 40px;
+    text-align: center;
+   
+}
+
+/* small scren fit */
+@media (max-width: 768px) {
+    .story-row,
+    .story-row--reverse {
+        grid-template-columns: 1fr;
+  }
+    .story-row--reverse .story-photo,
+    .story-row--reverse .story-text {
+        order: initial;
+  }
+    .story-photo-grid {
+        grid-template-columns: 1fr;
+  }
+    .story-photo-grid--bottom {
+        grid-template-columns: 1fr;
+  } 
+}
+
+
