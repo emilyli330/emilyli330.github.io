@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interaction I</title>
+
+  <!-- Gorditas font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+
+    <!-- Navbar -->
+  <header class="top-bar">
+    <!-- music btn -->
+    <button class="audio-btn" id="audio-toggle" aria-label="Toggle music">
+    <img src="music_icon.png" class="audio-icon" alt="music icon">
+
+    </button>
+
+    <!-- 中间标题 -->
+    <div class="top-bar__titles">
+      <h1 class="top-bar__title">Interaction Design I</h1>
+      <p class="top-bar__subtitle">Emily Li</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      
+      <img src="woodsign.png" alt="Wooden Signs" class="sign-stack">
+
+      <a href="https://www.instagram.com/aliceinemoji/" class="sign-link sign-1">
+        Project 1: Platforms Poem
+      </a>
+
+      <a href="https://emilyli330.github.io/noweb/" class="sign-link sign-2">
+        Project 2: Basic Build
+      </a>
+
+      <a href="https://emilyli330.github.io/la_chelita/" class="sign-link sign-3">
+        Project 3: La Chelita
+      </a>
+
+      <a href="https://emilyli330.github.io/snackstore/" class="sign-link sign-4">
+        Project 4: Collection Site
+      </a>
+    </div>
+  </section>
+
+ 
+  <!-- music-->
+  <audio id="bg-music" src="simplelife.m4a" preload="auto"></audio>
+
+  <!-- pause and play -->
+  <script>
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('audio-toggle');
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        btn.classList.add('is-playing');
+      } else {
+        audio.pause();
+        btn.classList.remove('is-playing');
+      }
+    });
+  </script>
+
+</body>
+</html>
